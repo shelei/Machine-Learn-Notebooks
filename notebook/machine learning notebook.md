@@ -1367,7 +1367,7 @@ plt.show()
 ![图1.5-8](imgs/scipy14.png)
  <p align="center">图1.5-8 小提琴图</p>
 
-##### 1.5.4.5 其他展示数据集的方法
+##### 1.5.4.5 其它展示数据集的方法
 将两种图形结合起来，其中`alpha`指定透明度。
 ```python
 sns.violinplot(x='day', y='total_bill', data = tips, inner =None)
