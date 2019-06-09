@@ -5,16 +5,16 @@
 
 ## 1 Python 工具库
 
-### 1.2 科学计算库Numpy
+### 1.1 科学计算库Numpy
 主要完成矩阵运算。
-#### 1.2.1 格式化读入数据
+#### 1.1.1 格式化读入数据
 ```python
 import numpy
 numpy.genformtxt("filename.txt", delimiter = ".", dtype = str, skip_header = 1)
 ```
 
 可使用`help(numpy.genformtxt)`来查看该函数的帮助。
-#### 1.2.2 构造矩阵、向量
+#### 1.1.2 构造矩阵、向量
 ```python
 vertor = numpy.array([5,10,15,20])
 matrix = numpy.array([[5,10,15],[20,25,30],[35,40,45]])
@@ -24,7 +24,7 @@ matrix = numpy.array([[5,10,15],[20,25,30],[35,40,45]])
 
 可使用`type(vertor)` 或 `type(matrix)`和`vertor.shape` 或 `matrix.shape`来查看数据结构，使用`matrix.dtype`查看数据元素的数据类型。
 
-#### 1.2.3 Numpy中array切片
+#### 1.1.3 Numpy中array切片
 >注意：索引从0开始。
 ```python
 #matrix[0][1], 10
@@ -36,7 +36,7 @@ matrix[:,1]
 #matrix[x:y] (x in (0,1) and y in (0,n))
 matrix[0:2,:]  
 ```
-####  1.2.4 逻辑判断
+####  1.1.4 逻辑判断
 ```python
 equal_to_ten = matrix == 10
 equal_to_ten_and_five = (matrix == 10) & (matrix == 5)
@@ -44,12 +44,12 @@ equal_to_ten_or_five = (matrix == 10) | (matrix == 5)
 ```
 一个和原矩阵相同结构的布尔类型矩阵，当某个位置元素的值和10相等时，为`True`, 其余是`False`。也可使用`|`和`&`进行逻辑计算。  
 返回的结果可以用来索引元素。如可使用上面的`equal_to_ten`矩阵来过滤元素，如`matrix[equal_to_ten]`, 返回一个数组，或者获取某一行或某一列`matrix[equal_to_ten,:]`  
-####  1.2.5 元素类型转换
+####  1.1.5 元素类型转换
 ```python
 vector  = numpy.array(["1","2","3"])
 vector  = vector.astype(float)
 ```
-#### 1.2.5  矩阵处理
+#### 1.1.6  矩阵处理
 求和：
 ```python
 #return the min element in vector
@@ -68,7 +68,7 @@ matrix.sum(axis = 1)
 #out: array([60,75,90])
 matrix.sum(axis = 0) 
 ```
-#### 1.2.5  矩阵变换
+#### 1.1.7  矩阵变换
 矩阵调整:
 ```python
 # a use 'as'
@@ -104,7 +104,8 @@ from numpy  import pi
 np.linspace( 0, 2*pi, 100)
 
 ```
-1.2.5 矩阵计算
+#### 1.1.8 矩阵计算
+
 ```python
 # the product operator * operates elementwise is NumPy arrays
 import numpy as np
@@ -1373,7 +1374,7 @@ plt.show()
 ![图1.5-8](imgs/scipy14.png)
  <p align="center">图1.5-8 小提琴图</p>
 
-##### 1.5.4.5 其它展示数据集的方法
+##### 1.5.4.4 其它展示数据集的方法
 将两种图形结合起来，其中`alpha`指定透明度。
 ```python
 sns.violinplot(x='day', y='total_bill', data = tips, inner =None)
